@@ -1,0 +1,51 @@
+<%- include('header')%> <%- include('navbar')%>
+
+<form class="w-25 container" action="/Create" method="post">
+  <h1 class="container my-3">
+    <span class="text-success">Create</span> User...
+  </h1>
+  <input
+    class="form-control my-3"
+    type="text"
+    placeholder="Enter your name"
+    name="name"
+  />
+  <input
+    class="form-control my-3"
+    id="email"
+    type="email"
+    name="email"
+    placeholder="Enter your email"
+  />
+  <input
+    class="form-control my-3"
+    type="text"
+    name="phone"
+    placeholder="Enter your number"
+  />
+  <button class="btn btn-success w-100 my-2">Add User</button>
+</form>
+<hr class="w-75 m-auto mt-4" />
+
+<div class="d-flex justify-content-between m-auto w-75 container mt-3">
+  <div class="">
+    <div class="header">
+      <h4 class="mb-3">
+        User Details &
+        <span style="color: green"> you can also get the task of the user</span>
+      </h4>
+    </div>
+
+    <ul class="list-group list-group-numbered">
+      <% user.forEach((user)=>{%>
+      <li class="w-75 list-group-item">
+        <a class="text-decoration-none text-dark" href="/task"
+          ><%= user.name%></a
+        >
+      </li>
+      <%})%>
+    </ul>
+  </div>
+</div>
+
+<%- include('footer')%> <%- include('header')%>
